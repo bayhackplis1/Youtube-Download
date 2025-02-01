@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Music Extractor</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+    <style>
+        #matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-bg"></canvas>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center mb-0">
+                            <i class="fab fa-youtube text-danger"></i> 
+                            YouTube Music Downloader
+                        </h1>
+                    </div>
+                    <div class="card-body">
+                        <form id="searchForm" class="mb-4">
+                            <div class="input-group mb-3">
+                                <input type="text" id="searchQuery" class="form-control" 
+                                       placeholder="Enter YouTube URL or song name" required>
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-search"></i> Search
+                                </button>
+                            </div>
+                        </form>
+
+                        <div id="searchResults" class="list-group mb-4"></div>
+
+                        <div id="downloadOptions" class="d-none">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Download Options</h5>
+                                    <form id="downloadForm">
+                                        <input type="hidden" id="videoUrl">
+                                        <div class="mb-3">
+                                            <label class="form-label">Format:</label>
+                                            <div class="btn-group" role="group">
+                                                <input type="radio" class="btn-check" name="format" 
+                                                       id="mp3Format" value="mp3" checked>
+                                                <label class="btn btn-outline-primary" for="mp3Format">MP3</label>
+
+                                                <input type="radio" class="btn-check" name="format" 
+                                                       id="mp4Format" value="mp4">
+                                                <label class="btn btn-outline-primary" for="mp4Format">MP4</label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="loadingSpinner" class="text-center d-none">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
