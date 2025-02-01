@@ -1,0 +1,95 @@
+
+:root {
+    --hacker-green: #00ff00;
+    --blood-red: #ff0000;
+    --dark-bg: #000000;
+    --matrix-font: 'Courier New', monospace;
+}
+
+body {
+    background-color: var(--dark-bg);
+    font-family: var(--matrix-font);
+    color: var(--hacker-green);
+}
+
+.card {
+    background-color: rgba(0, 20, 0, 0.9);
+    border: 1px solid var(--hacker-green);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 20px rgba(0, 255, 0, 0.2); }
+    50% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.4); }
+    100% { box-shadow: 0 0 20px rgba(0, 255, 0, 0.2); }
+}
+
+.card-header {
+    background-color: rgba(0, 10, 0, 0.9);
+    border-bottom: 1px solid var(--hacker-green);
+}
+
+.form-control {
+    background-color: #000;
+    border: 1px solid var(--hacker-green);
+    color: var(--hacker-green);
+    font-family: var(--matrix-font);
+}
+
+.form-control:focus {
+    background-color: #000;
+    border-color: var(--blood-red);
+    color: var(--hacker-green);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid var(--hacker-green);
+    color: var(--hacker-green);
+}
+
+.btn-primary:hover {
+    background-color: var(--hacker-green);
+    color: var(--dark-bg);
+    border-color: var(--hacker-green);
+}
+
+.btn-success {
+    background-color: transparent;
+    border: 1px solid var(--blood-red);
+    color: var(--blood-red);
+}
+
+.btn-success:hover {
+    background-color: var(--blood-red);
+    color: var(--dark-bg);
+}
+
+.list-group-item {
+    background-color: rgba(0, 20, 0, 0.9);
+    border: 1px solid var(--hacker-green);
+    color: var(--hacker-green);
+    margin-bottom: 5px;
+}
+
+.list-group-item:hover {
+    background-color: rgba(20, 0, 0, 0.9);
+    border-color: var(--blood-red);
+    transform: translateX(5px);
+}
+
+.text-muted {
+    color: #4a4 !important;
+}
+
+.spinner-border {
+    color: var(--blood-red) !important;
+}
+
+.alert-danger {
+    background-color: rgba(50, 0, 0, 0.9);
+    border-color: var(--blood-red);
+    color: var(--blood-red);
+}
